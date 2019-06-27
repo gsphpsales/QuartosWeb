@@ -27,6 +27,12 @@
                 height: 100vh;
                 margin: 0;
             }
+            .pg{
+                margin-left: 30px;
+            }
+            .top{
+                float: right;
+            }
 
            
         </style>
@@ -34,7 +40,7 @@
     <body>
 
 
-        <div class="img"><img src="{{asset('img/logo.png')}}"></div>
+        <div id="top" class="img"><img src="{{asset('img/logo.png')}}"></div>
       
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -54,12 +60,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                         <li><a href="#aco">Acomodações</a></li>
+                        <li><a href="#pco">Princimpais Comodidades</a></li>
+                        <li><a href="#rg">Regras</a></li>
+                        <li><a href="#px">Proximidades</a></li>
                         <li><a href="#dis">Disponibilidade</a></li>
-                        <li><a href="#">Comodidades</a></li>
-                        <li><a href="#">Princimpais Comodidades</a></li>
-                        <li><a href="#">Regras</a></li>
-                        <li><a href="#">Proximidades</a></li>
-                        <li><a href="#">Resevar</a></li>
+                        <li><a href="#res">Resevar</a></li>
                   </ul>      
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -88,7 +93,13 @@
             Um espaço planejado para seu conforto e comodidade</h3>           
           <p>Bem localizado no melhor  bairro de Fortaleza, á um quarteirão você encontra, padarias, restaurantes, farmacias e muito mais.</p> 
           <p>Ambiente amigável, excelente receptividade. </p>    
+            <div class="top">
+                <a href="#top">
+                    Voltar ao topo<i class="material-icons">arrow_upward</i>
+                </a>
+            </div>
           </div>
+
 
            <div class="jumbotron" id="aco">
             <!--For modern browsers-->
@@ -99,13 +110,99 @@
           <p> </p>    
           </div>
 
+          <div class="jumbotron" id="pco">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">local_play</i>Principais comodidades</h3> 
+            <div class="pg">         
+              <p><i class="material-icons">wifi</i>Wi-Fi gratuito</p> 
+              <p><i class="material-icons">people</i>Ambiente familiar</p> 
+              <p><i class="material-icons">place</i>Localização</p>  
+              <p><i class="material-icons">restaurant</i>Cozinha Completa disponivél</p>  
+              <p><i class="material-icons">domain</i>Terraço coberto</p>  
+              <p><i class="material-icons">local_parking</i>Estacionamento</p>
+              <p><i class="material-icons">switch_video</i>Monitoramento por cameras</p>  
+              </div>
+              <div class="top">
+                    <a href="#top">
+                        Voltar ao topo<i class="material-icons">arrow_upward</i>
+                    </a>
+                </div>    
+          </div>
+
+          <div class="jumbotron" id="rg">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">playlist_add_check</i>Regras</h3> 
+            <div class="pg">  
+                <p><i class="material-icons">date_range</i>Entrada 14:00 - 22:00  --  <i class="material-icons">date_range</i>Saída 10:00 - 11:00 </p>  
+                <p><i class="material-icons">error</i> Cancelamento/
+                pré-pagamento:<br> As políticas de cancelamento e pré-pagamento variam de acordo com o tipo de acomodação. Adicione as datas da sua estadia e visualize a política do quarto requerido. </p>       
+                 
+                <p><i class="material-icons">error</i> Crianças e camas: <br>0 anos de idade ou mais 
+                Pode usar uma cama adicional mediante pedido
+                R$ 100 por pessoa, por diária <br>
+                O número máximo permitido de camas extras depende do quarto que você escolher. <br>Por favor, confira a ocupação máxima do quarto que você selecionou. 
+                </p> 
+                <p>Nenhum berço disponível<br>
+                Sem restrições de idade<br>
+                <i class="material-icons">
+                check_box
+                </i> Não há exigência de idade para o check-in</p>
+
+                <p><i class="material-icons">
+                credit_card
+                </i> Cartões aceitos nesta propriedade:
+                
+                <img src="{{asset('img/cat.png')}}" style="width: 221px; height: 68px;">
+                </p><br>
+                <p>Casa da Adriana Pousada e Hostel aceita estes cartões e se reserva o direito de fazer um bloqueio temporário em seu cartão antes da chegada.</p>
+
+                 <p><i class="material-icons">
+                voice_over_off
+                </i> Os hóspedes devem fazer silêncio entre 23:00 e 06:00.</p>
+
+                <p><i class="material-icons">
+                pets
+                </i> Animais de estimação <br>
+                Animais de estimação: não permitidos.
+                </p>
+            </div> 
+            <div class="top">
+                <a href="#top">
+                    Voltar ao topo<i class="material-icons">arrow_upward</i>
+                </a>
+            </div>   
+          </div>
+
           <div class="jumbotron" id="dis">
             <!--For modern browsers-->
 
-            <h3><i class="material-icons">home</i>
-            Um espaço planejado para seu conforto e comodidade</h3>           
-          <p>Bem localizado no melhor  bairro de Fortaleza, á um quarteirão você encontra, padarias, restaurantes, farmacias e muito mais.</p> 
-          <p>Ambiente amigável, excelente receptividade. </p>    
+            <h3><i class="material-icons">rate_review</i>
+            Proximidades</h3> 
+            <div class="pg">         
+          
+          </div>    
+          </div>
+
+          <div class="jumbotron" id="dis">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">rate_review</i>
+            Disponibilidade</h3> 
+            <div class="pg">         
+          
+          </div>    
+          </div>
+
+          <div class="jumbotron" id="res">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">rate_review</i>
+            Resevar</h3> 
+            <div class="pg">         
+          
+          </div>    
           </div>
             
         </div>
