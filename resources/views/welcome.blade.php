@@ -178,11 +178,11 @@
           <div class="jumbotron" id="dis">
             <!--For modern browsers-->
 
-            <h3><i class="material-icons">rate_review</i>
+            <h3><i class="material-icons">location_on</i>
             Proximidades</h3> 
             <div class="pg">         
-          
-          </div>    
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3088474909932!2d-38.50567668588391!3d-3.742739644292061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7488d7493bc03%3A0x4f4725c8117c1374!2sR.+Joaquim+Nabuco%2C+1939+-+Meireles%2C+Fortaleza+-+CE%2C+60125-120!5e0!3m2!1spt-BR!2sbr!4v1561671052229!5m2!1spt-BR!2sbr" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>    
           </div>
 
           <div class="jumbotron" id="dis">
