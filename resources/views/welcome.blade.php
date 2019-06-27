@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/estilo.css') }}" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 
         <style>
             html, body {
@@ -45,15 +46,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Home</a>
+                  <a class="navbar-brand" href="#home">Home</a>
                   
                 </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                        <li><a href="#">Acomodações</a></li>
-                        <li><a href="#">Disponibilidade</a></li>
+                        <li><a href="#aco">Acomodações</a></li>
+                        <li><a href="#dis">Disponibilidade</a></li>
                         <li><a href="#">Comodidades</a></li>
                         <li><a href="#">Princimpais Comodidades</a></li>
                         <li><a href="#">Regras</a></li>
@@ -63,11 +64,11 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-<div class="max-w">
 
-    <section class="col-70">
 
-        <article class="col-100">
+    <section class="col-100">
+
+        
             <div class="banner">
                 <div><img src="{{asset('banner/01.jpg')}}"></div>
                 <div><img src="{{asset('banner/02.jpg')}}"></div>
@@ -75,10 +76,40 @@
                 <div><img src="{{asset('banner/04.jpg')}}"></div>
                 <div><img src="{{asset('banner/05.jpg')}}"></div>
             </div>
-        </article>
+       
 
+   
+
+        <div class="container">
+          <div class="jumbotron" id="home">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">home</i>
+            Um espaço planejado para seu conforto e comodidade</h3>           
+          <p>Bem localizado no melhor  bairro de Fortaleza, á um quarteirão você encontra, padarias, restaurantes, farmacias e muito mais.</p> 
+          <p>Ambiente amigável, excelente receptividade. </p>    
+          </div>
+
+           <div class="jumbotron" id="aco">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">hotel</i>
+            Acomodações</h3>           
+          <p></p> 
+          <p> </p>    
+          </div>
+
+          <div class="jumbotron" id="dis">
+            <!--For modern browsers-->
+
+            <h3><i class="material-icons">home</i>
+            Um espaço planejado para seu conforto e comodidade</h3>           
+          <p>Bem localizado no melhor  bairro de Fortaleza, á um quarteirão você encontra, padarias, restaurantes, farmacias e muito mais.</p> 
+          <p>Ambiente amigável, excelente receptividade. </p>    
+          </div>
+            
+        </div>
     </section>
-</div>
 
     </body>
     <script src="{{ asset('js/app.js') }}"></script>
