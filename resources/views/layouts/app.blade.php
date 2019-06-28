@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Quartos Web</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -29,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Quartos Web 
                     </a>
                 </div>
 
@@ -71,7 +71,34 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                          <!-- Navbar content -->
+                            <ul class="nav nav-pills">
+                              <li role="presentation" class="active"><a href="#">Home</a></li>
+                              <li role="presentation"><a href="#">Quartos</a></li>
+                              <li role="presentation"><a href="#">Reservas</a></li>
+                            </ul>
+
+                        </nav>
+
+                        <div class="panel-body">
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                           @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--closed container-->
     </div>
 
     <!-- Scripts -->
