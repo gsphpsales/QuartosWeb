@@ -33,6 +33,11 @@
             .top{
                 float: right;
             }
+            .logo{
+                width: 140px;
+                height: 140px;
+                float: left;
+            }
 
            
         </style>
@@ -40,7 +45,7 @@
     <body>
 
 
-        <div id="top" class="img"><img src="{{asset('img/logo.png')}}"></div>
+        <div id="top" class="logo"><img src="{{asset('img/logo.png')}}"></div>
       
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -188,7 +193,7 @@
           <div class="jumbotron" id="dis">
             <!--For modern browsers-->
 
-            <h3><i class="material-icons">rate_review</i>
+            <h3><i class="material-icons">edit_attributes</i>
             Disponibilidade</h3> 
             <div class="pg">         
           
