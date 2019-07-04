@@ -213,11 +213,8 @@
                     <option value="4">04</option>
                 </select>
                 <label><i class="material-icons">hotel</i>Quartos</label>
-                <select>
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
+                <select id="room">
+               
                 </select>
                   
               
@@ -273,4 +270,31 @@
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/funcoes.js') }}"></script>
+
+
+<script type="text/javascript">
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+        }
+    });
+    $(function(){
+        showRooms();
+    });
+
+     //function to show rooms at form availability 
+    function showRooms() {
+        $.getJSON('/api/ava', function(data) { 
+            for(i=0;i<data.length;i++) {
+                opcao = '<option value ="' + data[i].id + '">' + 
+                    data[i].id + '</option>';
+                $('#room').append(opcao);
+            }
+        });
+    }
+
+
+</script>
+
 </html>
