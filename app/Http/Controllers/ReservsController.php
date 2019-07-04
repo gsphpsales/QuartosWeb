@@ -17,6 +17,12 @@ class ReservsController extends Controller
         //
     }
 
+    public function availability()
+    {
+
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *

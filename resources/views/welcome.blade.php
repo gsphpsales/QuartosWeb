@@ -195,7 +195,38 @@
 
             <h3><i class="material-icons">edit_attributes</i>
             Disponibilidade</h3> 
-            <div class="pg">         
+            <div class="pg">  
+                <form action="/QuartosWeb/public/res/ava" method="POST">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <div class="form-group">
+                
+                <label><i class="material-icons">date_range</i>Entrada</label>
+                <input type="date" name="inp" id="inp">
+                <label><i class="material-icons">date_range</i>Saída</label>
+                <input type="date" name="out" id="out">
+
+                <label><i class="material-icons">people</i>Adultos</label>
+                <select>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                </select>
+                <label><i class="material-icons">hotel</i>Quartos</label>
+                <select>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                </select>
+                  
+              
+              
+              
+              <button type="submit" class="btn btn-primary">Verificar</button>
+              </div>
+            </form>
+
           
           </div>    
           </div>
