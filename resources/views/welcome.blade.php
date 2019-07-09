@@ -196,29 +196,41 @@
             <h3><i class="material-icons">edit_attributes</i>
             Disponibilidade</h3> 
             <div class="pg">  
-                <form  method="POST" id="formAva">
+                <form   id="formAva" action="/ava/check" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                 
                         <label><i class="material-icons">date_range</i>Entrada</label>
-                        <input type="date" name="inp" id="inp">
+                        <input type="date" name="inp" id="inp" required="required">
                         <label><i class="material-icons">date_range</i>Saída</label>
-                        <input type="date" name="out" id="out">
+                        <input type="date" name="out" id="out" required="required" onchange="dates()">
 
-                        <label><i class="material-icons">people</i>Adultos</label>
-                        <select>
+                        <label><i class="material-icons" required="required">people</i>Adultos</label>
+                        <select name="adu">
+                            <option value="">00</option>
                             <option value="1">01</option>
                             <option value="2">02</option>
                             <option value="3">03</option>
                             <option value="4">04</option>
                         </select>
                         <label><i class="material-icons">hotel</i>Quartos</label>
-                        <select id="room">
+                        <select id="room" name="room" required="required">
+                            <option value="">00</option>
                        
                         </select>
 
-                        <button type="submit" class="btn btn-primary">Verificar</button>
+                        
                     </div>
+                    <div class="form-group">
+                        <label><i class="material-icons">hotel</i>Modalidade</label>
+                        <select id="mod" name="mod" required="required">
+                            <option value="1">Diária</option>
+                            <option value="0">Mensal</option>
+                       
+                        </select>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Verificar</button>
                 </form>  
           </div>    
           </div>
@@ -229,7 +241,7 @@
             <h3><i class="material-icons">rate_review</i>
             Resevar</h3> 
             <div class="pg">  
-            <form action="/QuartosWeb/public/res" method="POST">
+            <form action="/res" method="POST">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
                 <label for="pwd">Nome completo</label>
@@ -249,11 +261,9 @@
                   
               </div>
               
-              
               <button type="submit" class="btn btn-default">Reservar</button>
             </form>
 
-          
           </div>    
           </div>
             
@@ -276,7 +286,35 @@
     });
     $(function(){
         showRooms();
+       current();
+
+
     });
+    function current(){
+      var field = document.querySelector('#inp');
+var date = new Date();
+
+// Set the date
+field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
+    '-' + date.getDate().toString().padStart(2, 0);
+    }
+    function dates(){
+
+
+var date1 = new Date(document.getElementById('inp').value);
+var date2 = new Date(document.getElementById('out').value);
+var timeDiff = date2 - date1;
+var diffDays = timeDiff / (1000 * 3600 * 24); 
+
+if (diffDays <'1') {
+    alert('Favor escolher datas com 1 dia ou mais de diferença.');
+}
+
+
+
+ // document.getElementById('resultado').innerHTML = n1 + n2;
+    }
+
 
      //function to show rooms at form availability 
     function showRooms() {
@@ -289,19 +327,7 @@
         });
     }
 
-    $("#formAva").submit( function(event){ 
-        event.preventDefault(); 
-
-        function checkAva() {
-        chek = { 
-            inp: $("#inp").val(),
-            out: $("#out").val(),
-            room: $("#room").val() 
-        };
-      //
-    }
-        
-    });
+    
 
 
 </script>
