@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Reservs;
 use Illuminate\Http\Request;
-
+use App\Rooms;
+use Illuminate\Support\Facades\DB;
 class ReservsController extends Controller
 {
     /**
@@ -17,10 +18,44 @@ class ReservsController extends Controller
         //
     }
 
-    public function availability()
+    public function availability(Request $request)
     {
 
+        $request->input('adu');
+        $request->input('room');
+        $request->input('mod');
+        $inp = $request->input('inp');
+        $out = $request->input('out');
+        $id = rooms::all('id');//->count();
+        $room = rooms::all('id')->count();
+        $id1 = $id['0'];
+
+        //$sql = reservs::all()->where('id', $id1->id);
+        //DAYS CURRENT
+        $days = strtotime($inp) - strtotime($out);
+        $daysf = floor($days / (60 * 60 * 24));
+       
+          
         
+       
+
+        $sql2 = DB::table('reservs')->where('id', $id1->id)->whereBetween('inp', [$inp, $out])->count();
+       
+        if ($sql2 >= 1) {
+            
+              $res= 1;
+             return view('welcome')->with('res', $res);
+        }else{
+            echo("arg1");
+            exit();
+        }
+
+        echo $sql2;
+//'SELECT * FROM `reservs` WHERE id = '3' and `inp` AND `out` BETWEEN '2019/07/10' AND '2019/07/28''
+       
+        exit();
+   
+
     }
 
     /**

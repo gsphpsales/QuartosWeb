@@ -38,6 +38,14 @@
                 height: 140px;
                 float: left;
             }
+            .popup{
+                width: 80%;
+                height: 60%;
+                background-color: red;
+                position: absolute;
+                z-index: 9100;
+                margin-top: 200px;
+            }
 
            
         </style>
@@ -180,7 +188,7 @@
             </div>   
           </div>
 
-          <div class="jumbotron" id="dis">
+          <div class="jumbotron" id="px">
             <!--For modern browsers-->
 
             <h3><i class="material-icons">location_on</i>
@@ -232,10 +240,27 @@
                     </div>
                     <button type="submit" class="btn btn-primary" >Verificar</button>
                 </form>  
+
+
           </div>    
           </div>
+               <?php 
+          if (isset($res)) {
+            printf('<div class="alert alert-danger" role="alert">
+  Não existe disponibilidade nesta data.
+</div>');
+            
+            if ($res == 1) {
+                print('<div');
+            }
 
-          <div class="jumbotron" id="res">
+
+          }
+
+          ?>
+         
+
+                 <div class="jumbotron" id="res">
             <!--For modern browsers-->
 
             <h3><i class="material-icons">rate_review</i>
@@ -270,6 +295,52 @@
         </div>
     </section>
 
+    <!--modal Size-->
+
+<div class="modal" tabindex="-1" role="dialog" id="dlgSize">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content col-md-12">
+            <form class="form-horizontal" id="formSize">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo Tamanho</h5>
+                </div>
+                <div class="modal-body">
+
+                  
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ns" placeholder="Nome">
+                    </div>
+                                       
+                    <div class="form-group">
+                        <label for="id_grid" class="control-label">Grade</label>
+                        <select class="form-control" id="id_grid2">
+                            
+                        </select>    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ord" class="control-label">Ordem</label>
+                        <select class="form-control" id="order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+
+                        </select>    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+      <!--modalGridx-->
+
+
     </body>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
@@ -284,13 +355,17 @@
             'X-CSRF-TOKEN': "{{ csrf_token() }}"
         }
     });
-    $(function(){
+    $(function()
+    {
         showRooms();
        current();
+      
 
 
     });
-    function current(){
+ 
+    function current()
+    {
       var field = document.querySelector('#inp');
 var date = new Date();
 
@@ -298,7 +373,8 @@ var date = new Date();
 field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
     '-' + date.getDate().toString().padStart(2, 0);
     }
-    function dates(){
+    function dates()
+    {
 
 
 var date1 = new Date(document.getElementById('inp').value);
@@ -325,6 +401,7 @@ if (diffDays <'1') {
                 $('#room').append(opcao);
             }
         });
+
     }
 
     
