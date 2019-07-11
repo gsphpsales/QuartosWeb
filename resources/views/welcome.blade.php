@@ -1,89 +1,5 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Quartos Web</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/estilo.css') }}" />
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            .pg{
-                margin-left: 30px;
-            }
-            .top{
-                float: right;
-            }
-            .logo{
-                width: 140px;
-                height: 140px;
-                float: left;
-            }
-            .popup{
-                width: 80%;
-                height: 60%;
-                background-color: red;
-                position: absolute;
-                z-index: 9100;
-                margin-top: 200px;
-            }
-
-           
-        </style>
-    </head>
-    <body>
-
-
-        <div id="top" class="logo"><img src="{{asset('img/logo.png')}}"></div>
-      
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-        
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#home">Home</a>
-                  
-                </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                        <li><a href="#aco">Acomodações</a></li>
-                        <li><a href="#pco">Princimpais Comodidades</a></li>
-                        <li><a href="#rg">Regras</a></li>
-                        <li><a href="#px">Proximidades</a></li>
-                        <li><a href="#dis">Disponibilidade</a></li>
-                        <li><a href="#res">Resevar</a></li>
-                  </ul>      
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-
-
+@extends('layouts.index')
+@section('content')
     <section class="col-100">
 
         
@@ -251,7 +167,17 @@
 </div>');
             
             if ($res == 1) {
-                print('<div');
+                print('<div id="pop" style.display="none";>
+
+<h3>Infelizmente não temos vaga nesse periódo.</h3>
+<a href="http://api.whatsapp.com/send?1=pt_BR&phone=5500000000000" target="_blank" >Click aqui e fale conosco pelo Whatsapp</a>
+<br>
+<br>
+<h4><a href="/#dis"> Tentar outra data</a></h4>
+
+
+ 
+</div>');
             }
 
 
@@ -260,153 +186,6 @@
           ?>
          
 
-                 <div class="jumbotron" id="res">
-            <!--For modern browsers-->
-
-            <h3><i class="material-icons">rate_review</i>
-            Resevar</h3> 
-            <div class="pg">  
-            <form action="/res" method="POST">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <div class="form-group">
-                <label for="pwd">Nome completo</label>
-                <input type="text" class="form-control" name="name" id="name" >
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" name="email" id="email">
-              </div>
-
-              <div class="form-group">
-                <label>Entrada</label>
-                <input type="date" name="inp" id="inp">
-                <label>Saída</label>
-                <input type="date" name="out" id="out">
-                  
-              </div>
-              
-              <button type="submit" class="btn btn-default">Reservar</button>
-            </form>
-
-          </div>    
-          </div>
-            
-        </div>
+   
     </section>
-
-    <!--modal Size-->
-
-<div class="modal" tabindex="-1" role="dialog" id="dlgSize">
-    <div class="modal-dialog" role="document"> 
-        <div class="modal-content col-md-12">
-            <form class="form-horizontal" id="formSize">
-                <div class="modal-header">
-                    <h5 class="modal-title">Novo Tamanho</h5>
-                </div>
-                <div class="modal-body">
-
-                  
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="ns" placeholder="Nome">
-                    </div>
-                                       
-                    <div class="form-group">
-                        <label for="id_grid" class="control-label">Grade</label>
-                        <select class="form-control" id="id_grid2">
-                            
-                        </select>    
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ord" class="control-label">Ordem</label>
-                        <select class="form-control" id="order">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-
-                        </select>    
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-      <!--modalGridx-->
-
-
-    </body>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/funcoes.js') }}"></script>
-
-
-<script type="text/javascript">
-    
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': "{{ csrf_token() }}"
-        }
-    });
-    $(function()
-    {
-        showRooms();
-       current();
-      
-
-
-    });
- 
-    function current()
-    {
-      var field = document.querySelector('#inp');
-var date = new Date();
-
-// Set the date
-field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
-    '-' + date.getDate().toString().padStart(2, 0);
-    }
-    function dates()
-    {
-
-
-var date1 = new Date(document.getElementById('inp').value);
-var date2 = new Date(document.getElementById('out').value);
-var timeDiff = date2 - date1;
-var diffDays = timeDiff / (1000 * 3600 * 24); 
-
-if (diffDays <'1') {
-    alert('Favor escolher datas com 1 dia ou mais de diferença.');
-}
-
-
-
- // document.getElementById('resultado').innerHTML = n1 + n2;
-    }
-
-
-     //function to show rooms at form availability 
-    function showRooms() {
-        $.getJSON('/api/ava', function(data) { 
-            for(i=0;i<data.length;i++) {
-                opcao = '<option value ="' + data[i].id + '">' + 
-                    data[i].id + '</option>';
-                $('#room').append(opcao);
-            }
-        });
-
-    }
-
-    
-
-
-</script>
-
-</html>
+@endsection
