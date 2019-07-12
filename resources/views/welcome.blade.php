@@ -131,7 +131,7 @@
 
                         <label><i class="material-icons" required="required">people</i>Adultos</label>
                         <select name="adu">
-                            <option value="">00</option>
+                            
                             <option value="1">01</option>
                             <option value="2">02</option>
                             <option value="3">03</option>
@@ -139,7 +139,7 @@
                         </select>
                         <label><i class="material-icons">hotel</i>Quartos</label>
                         <select id="room" name="room" required="required">
-                            <option value="">00</option>
+                            
                        
                         </select>
 
@@ -147,7 +147,7 @@
                     </div>
                     <div class="form-group">
                         <label><i class="material-icons">hotel</i>Modalidade</label>
-                        <select id="mod" name="mod" required="required">
+                        <select id="mod" name="mod" required="required" onchange="mode()">
                             <option value="1">Diária</option>
                             <option value="0">Mensal</option>
                        
@@ -155,8 +155,19 @@
 
                     </div>
                     <button type="submit" class="btn btn-primary" >Verificar</button>
-                </form>  
 
+                                    <div class="jumbotron col-md-18">
+                    <span class="col-md-6">Valores diária: <br>
+                    1 pessoa  - R$: 120,00 <br>
+                    2 pessoas - R$: 135,00 <br>
+                    3 pessoas - R$: 200,00 <br>
+                    4 pessoas - R$: 260,00 <br> </span>
+                    <span class="col-md-6">Valores mensal:<br>
+                    Máximo 2 pessoas  - R$: 1500,00  </span>
+                </div>
+
+
+                </form>  
 
           </div>    
           </div>
