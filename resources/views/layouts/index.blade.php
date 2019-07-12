@@ -51,13 +51,15 @@
                 solid #d0d0d0;
                 background-color: #F2FBEF;}
  
-}
+            .navbar, .tophead{
+                background-color: #5697d9;
+            }
             
         </style>
     </head>
     <body>
 
-
+<div class="tophead">
         <div id="top" class="logo"><img src="{{asset('img/logo.png')}}"></div>
       
         <nav class="navbar navbar-inverse">
@@ -87,7 +89,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
+</div>
 @yield('content')
 
 
