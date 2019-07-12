@@ -121,38 +121,44 @@
  
     function current()
     {
-      var field = document.querySelector('#inp');
-var date = new Date();
+        var field = document.querySelector('#inp');
+        var date = new Date();
 
-// Set the date
-field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
-    '-' + date.getDate().toString().padStart(2, 0);
+        // Set the date
+        field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
+        '-' + date.getDate().toString().padStart(2, 0);
     }
     function dates()
     {
 
+        var date1 = new Date(document.getElementById('inp').value);
+        var date2 = new Date(document.getElementById('out').value);
+        var timeDiff = date2 - date1;
+        var diffDays = timeDiff / (1000 * 3600 * 24); 
 
-var date1 = new Date(document.getElementById('inp').value);
-var date2 = new Date(document.getElementById('out').value);
-var timeDiff = date2 - date1;
-var diffDays = timeDiff / (1000 * 3600 * 24); 
-
-if (diffDays <'1') {
-    alert('Favor escolher datas com 1 dia ou mais de diferença.');
-}
-
-
-
- // document.getElementById('resultado').innerHTML = n1 + n2;
+        if (diffDays <'1') {
+            alert('Favor escolher datas com 1 dia ou mais de diferença.');
+        }
     }
 
+    function mode()
+    {
+        var date1 = new Date(document.getElementById('inp').value);
+        var date2 = new Date(document.getElementById('out').value);
+        var timeDiff = date2 - date1;
+        var diffDays = timeDiff / (1000 * 3600 * 24); 
+
+        if (diffDays !='30') {
+            alert('Favor escolher datas com 30 dias entre elas.');       
+        }
+    }
 
      //function to show rooms at form availability 
     function showRooms() {
         $.getJSON('/api/ava', function(data) { 
             for(i=0;i<data.length;i++) {
                 opcao = '<option value ="' + data[i].id + '">' + 
-                    data[i].id + '</option>';
+                    data[i].name_room + '</option>';
                 $('#room').append(opcao);
             }
         });
