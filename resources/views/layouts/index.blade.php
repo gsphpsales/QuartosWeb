@@ -143,13 +143,16 @@
 
     function mode()
     {
-        var date1 = new Date(document.getElementById('inp').value);
-        var date2 = new Date(document.getElementById('out').value);
-        var timeDiff = date2 - date1;
-        var diffDays = timeDiff / (1000 * 3600 * 24); 
+        var md = document.getElementById('mod').value;
+        if (md == 0) {
+            var date1 = new Date(document.getElementById('inp').value);
+            var date2 = new Date(document.getElementById('out').value);
+            var timeDiff = date2 - date1;
+            var diffDays = timeDiff / (1000 * 3600 * 24); 
 
-        if (diffDays !='30') {
-            alert('Favor escolher datas com 30 dias entre elas.');       
+            if (diffDays !='30') {
+                alert('Favor escolher datas com 30 dias entre elas.');       
+            }
         }
     }
 
