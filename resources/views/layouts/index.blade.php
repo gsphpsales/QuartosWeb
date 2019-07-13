@@ -72,19 +72,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#home">Home</a>
+                  <a class="navbar-brand" href="#home">HOME</a>
                   
                 </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                        <li><a href="#aco">Acomodações</a></li>
-                        <li><a href="#pco">Princimpais Comodidades</a></li>
-                        <li><a href="#rg">Regras</a></li>
-                        <li><a href="#px">Proximidades</a></li>
-                        <li><a href="#dis">Disponibilidade</a></li>
-                        <li><a href="#res">Resevar</a></li>
+                        <li><a href="#aco"><i class="material-icons">hotel</i> Acomodações</a></li>
+                        <li><a href="#pco"><i class="material-icons">local_play</i> Princimpais Comodidades</a></li>
+                        <li><a href="#rg"><i class="material-icons">playlist_add_check</i> Regras</a></li>
+                        <li><a href="#px"><i class="material-icons">location_on</i> Proximidades</a></li>
+                        <li><a href="#dis"><i class="material-icons">edit_attributes</i> Disponibilidade</a></li>
+                        <li><a href="#dis"><i class="material-icons">rate_review</i> Resevar</a></li>
                   </ul>      
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
